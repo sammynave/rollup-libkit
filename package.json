@@ -1,0 +1,26 @@
+{
+  "name": "rollup-libkit",
+  "version": "0.0.0",
+  "description": "starter template for a rollup library",
+  "main": "index.js",
+  "author": "sammy.nave@gmail.com",
+  "license": "MIT",
+  "module": "dist/rollup-libkit.es.js",
+  "devDependencies": {
+    "npm-run-all": "latest",
+    "rollup": "latest",
+    "rollup-plugin-commonjs": "latest",
+    "rollup-plugin-node-resolve": "latest",
+    "trash-cli": "latest"
+  },
+  "scripts": {
+    "clean": "trash ./dist",
+    "build": "yarn run clean && rollup -c",
+    "build:watch": "rollup -c -w ",
+    "testSite": "cd ./test-site && yarn dev",
+    "dev": "run-s clean && run-p 'build:watch' 'testSite'",
+    "test": "node test/test.js",
+    "pretest": "yarn run build",
+    "prepublishOnly": "yarn run build"
+  }
+}
