@@ -4,15 +4,12 @@
     "dev": "webpack && webpack-dev-server --host 0.0.0.0"
   },
   "devDependencies": {
-    "@babel/core": "latest",
-    "@babel/preset-env": "latest",
-    "babel-loader": "latest",
-    "webpack": "latest",
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.5",
+    "babel-loader": "^8.1.0",
+    "webpack": "^4.42.1",
     "webpack-cli": "latest",
-    "webpack-dev-server": "latest"
-  },
-  "scripts": {
-    "dev": "webpack && webpack-dev-server --host 0.0.0.0"
+    "webpack-dev-server": "^3.10.3"
   },
   "browserslist": "> 0.25%, not dead"
 }
