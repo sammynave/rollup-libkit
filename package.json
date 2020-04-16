@@ -8,7 +8,7 @@
   "module": "dist/rollup-libkit.es.js",
   "devDependencies": {
     "npm-run-all": "latest",
-    "rollup": "^1.15.6",
+    "rollup": "^2.6.1",
     "rollup-plugin-commonjs": "^10.0.0",
     "rollup-plugin-node-resolve": "^5.0.3",
     "trash-cli": "^3.0.0"
