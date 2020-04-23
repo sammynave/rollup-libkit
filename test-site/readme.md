@@ -1,0 +1,1 @@
+A test site for checking build settings

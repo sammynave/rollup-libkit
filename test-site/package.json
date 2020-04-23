@@ -1,7 +1,7 @@
 {
   "name": "test-site",
   "scripts": {
-    "dev": "webpack && webpack-dev-server --host 0.0.0.0"
+    "dev": "yarn && webpack && webpack-dev-server --host 0.0.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
@@ -9,7 +9,8 @@
     "babel-loader": "^8.1.0",
     "webpack": "^4.42.1",
     "webpack-cli": "latest",
-    "webpack-dev-server": "^3.10.3"
+    "webpack-dev-server": "^3.10.3",
+    "rollup-libkit": "file:../"
   },
   "browserslist": "> 0.25%, not dead"
 }
