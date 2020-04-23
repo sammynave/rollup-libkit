@@ -1,17 +1,14 @@
-import resolve from 'rollup-plugin-node-resolve';
-import commonjs from 'rollup-plugin-commonjs';
-import pkg from './package.json';
+import resolve from "rollup-plugin-node-resolve";
+import commonjs from "rollup-plugin-commonjs";
+import pkg from "./package.json";
 
 export default [
   {
-    input: 'src/index.js',
+    input: "src/index.mjs",
     output: {
       file: pkg.module,
-      format: 'es'
+      format: "es",
     },
-    plugins: [
-      resolve(),
-      commonjs()
-    ]
-  }
+    plugins: [resolve(), commonjs()],
+  },
 ];

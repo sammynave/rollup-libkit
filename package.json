@@ -2,11 +2,13 @@
   "name": "rollup-libkit",
   "version": "0.0.0",
   "description": "starter template for a rollup library",
-  "main": "index.js",
+  "main": "dist/index",
   "author": "sammy.nave@gmail.com",
   "license": "MIT",
-  "module": "dist/rollup-libkit.es.js",
+  "module": "dist/index.mjs",
+  "sideEffects": false,
   "devDependencies": {
+    "agadoo": "^2.0.0",
     "npm-run-all": "latest",
     "rollup": "^2.6.1",
     "rollup-plugin-commonjs": "^10.0.0",
@@ -19,8 +21,9 @@
     "build:watch": "rollup -c -w ",
     "testSite": "cd ./test-site && yarn dev",
     "dev": "run-s clean && run-p 'build:watch' 'testSite'",
-    "test": "node test/test.js",
+    "test": "node test/index.mjs",
     "pretest": "yarn run build",
-    "prepublishOnly": "yarn run build"
+    "isTreeShakable": "yarn run agadoo",
+    "prepublishOnly": "yarn run build && yarn run isTreeShakable"
   }
 }
