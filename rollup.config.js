@@ -1,6 +1,6 @@
 import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
-import typescript from "@rollup/plugin-typescript";
+import sucrase from "@rollup/plugin-sucrase";
 import pkg from "./package.json";
 
 export default [
@@ -10,6 +10,13 @@ export default [
       file: pkg.module,
       format: "es",
     },
-    plugins: [typescript(), resolve(), commonjs()],
+    plugins: [
+      sucrase({
+        exclude: ["node_modules/**"],
+        transforms: ["typescript"],
+      }),
+      resolve(),
+      commonjs(),
+    ],
   },
 ];
