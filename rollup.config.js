@@ -6,10 +6,10 @@ import pkg from "./package.json";
 export default [
   {
     input: "src/index.ts",
-    output: {
-      file: pkg.module,
-      format: "es",
-    },
+    output: [
+      { file: `${pkg.main}.js`, format: "cjs" },
+      { file: pkg.module, format: "es" },
+    ],
     plugins: [
       sucrase({
         exclude: ["node_modules/**"],
