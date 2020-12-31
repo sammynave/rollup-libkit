@@ -19,6 +19,7 @@
     "@typescript-eslint/eslint-plugin": "^2.29.0",
     "@typescript-eslint/parser": "^2.29.0",
     "agadoo": "^2.0.0",
+    "ava": "^3.14.0",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-functional": "^3.0.1",
@@ -29,6 +30,7 @@
     "sander": "^0.6.0",
     "tiny-glob": "^0.2.6",
     "trash-cli": "^3.0.0",
+    "ts-node": "^9.1.1",
     "tslib": "^1.11.1",
     "typescript": "^3.8.3"
   },
@@ -39,10 +41,19 @@
     "build:watch": "rollup -c -w ",
     "testSite": "cd ./test-site && yarn dev",
     "dev": "run-s clean && yarn build && run-p 'build:watch' 'testSite'",
-    "test": "yarn build && node test/index.mjs",
+    "test": "ava",
+    "test:watch": "ava --watch",
     "pretest": "yarn run build",
     "isTreeShakable": "yarn run agadoo",
     "prepublishOnly": "yarn lint && yarn run build && yarn run isTreeShakable",
     "lint": "yarn eslint ./src/**/*.*"
+  },
+  "ava": {
+    "extensions": [
+      "ts"
+    ],
+    "require": [
+      "ts-node/register"
+    ]
   }
 }
